@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rcmanager>
+
+ <generalInformation>
+  <backgroundColor value="#123456"/>
+ </generalInformation>
+
+ <node endpoint="default: tcp -h localhost -p 10000" alias="com1">
+  <upCommand command="python /home/robocomp/robocomp/components/rcmanagerTest/com1/src/com1.py --Ice.Config=/home/robocomp/robocomp/components/rcmanagerTest/com1/etc/config"/>
+  <xpos value="-446.689404122"/>
+  <ypos value="6.214678174"/>
+  <configFile path="/home/robocomp/robocomp/components/rcmanagerTest/com1/etc/config"/>
+  <radius value="10.0"/>
+  <downCommand command="killall -9 com1"/>
+ </node>
+
+ <node endpoint="default: tcp -h localhost -p 11000" alias="com2">
+  <upCommand command="python /home/robocomp/robocomp/components/rcmanagerTest/com2/src/com2.py --Ice.Config=/home/robocomp/robocomp/components/rcmanagerTest com2/etc/config"/>
+  <configFile path="/home/robocomp/robocomp/components/rcmanagerTest/com1/etc/config"/>
+  <workingDir path="/home/robocomp/robocomp/components/rcmanagerTest/com1/"/>
+  <ypos value="10.9094595213"/>
+  <dependence alias="com1"/>
+  <radius value="10.0"/>
+  <downCommand command="killall -9 com2"/>
+  <xpos value="292.400730397"/>
+ </node>
+
+</rcmanager>

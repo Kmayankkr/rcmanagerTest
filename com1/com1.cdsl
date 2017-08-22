@@ -1,0 +1,10 @@
+
+Component com1
+{
+	Communications
+	{
+	};
+	language Python;
+	gui Qt(QWidget);
+};
+
